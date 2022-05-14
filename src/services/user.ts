@@ -5,7 +5,7 @@ import { User } from '../interfaces';
 
 dotenv.config();
 
-const SECRET: Secret = process.env.JWT_SECRET || '';
+const SECRET: Secret = process.env.JWT_SECRET || 'jwt_default_secret_trybesmith_project';
 
 export class UserService {
   model = new UserModel();
