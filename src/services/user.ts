@@ -13,6 +13,8 @@ export class UserService {
 
     return AuthService.generateToken(id, user.username);
   };
+
+  public findUser = async (user: User): Promise<User> => this.model.findUser(user);
 }
 
 export default UserService;
