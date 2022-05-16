@@ -1,5 +1,5 @@
 export interface Order {
-  id: number;
-  userId: string;
+  id?: number;
+  userId: number;
   productsIds: number[];
 }
