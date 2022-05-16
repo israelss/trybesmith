@@ -11,7 +11,7 @@ export class UserService {
   public create = async (user: User): Promise<string> => {
     const id = await this.model.create(user);
 
-    return AuthService.generateToken({ ...user, id });
+    return AuthService.generateToken(id, user.username);
   };
 }
 
