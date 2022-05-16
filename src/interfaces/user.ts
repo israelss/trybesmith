@@ -1,4 +1,5 @@
 import { Request } from 'express';
+import { IncomingHttpHeaders } from 'http';
 
 export interface User {
   id: number;
@@ -9,5 +10,6 @@ export interface User {
 }
 
 export interface UserRequest extends Request {
+  headers: IncomingHttpHeaders;
   user?: User;
 }
