@@ -1,30 +1,17 @@
 import dotenv from 'dotenv';
-import jwt, { Secret } from 'jsonwebtoken';
 import { UserModel } from '../models';
 import { User } from '../interfaces';
+import { AuthService } from './auth';
 
 dotenv.config();
-
-const SECRET: Secret = process.env.JWT_SECRET || 'jwt_default_secret_trybesmith_project';
 
 export class UserService {
   model = new UserModel();
 
   public create = async (user: User): Promise<string> => {
-    await this.model.create(user);
+    const id = await this.model.create(user);
 
-    const token = jwt.sign({
-      data: {
-        username: user.username,
-        classe: user.classe,
-        level: user.level,
-      },
-    }, SECRET, {
-      expiresIn: '7d',
-      algorithm: 'HS256',
-    });
-
-    return token;
+    return AuthService.generateToken({ ...user, id });
   };
 }
 
