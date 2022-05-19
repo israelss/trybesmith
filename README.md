@@ -2,7 +2,7 @@
 
 ## <strong>O que foi desenvolvido</strong>
 
-Para este projeto, foi criado uma loja de itens medievais, no formato de uma _API_, utilizando _Typescript_.
+Para este projeto, foi criada uma loja de itens medievais, no formato de uma _API_, utilizando _Typescript_.
 
 Foram desenvolvidas todas as camadas da aplicação (_Models_, _Service_ e _Controllers_) e, por meio dessa aplicação, é possível realizar as operações básicas que se pode fazer em um determinado banco de dados:
 Criação, Leitura, Atualização e Exclusão (_Create, Read, Update_ e _Delete_).
